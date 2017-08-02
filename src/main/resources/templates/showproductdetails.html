@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+    <title>Product Details</title>
+</head>
+<body>
+    <h1>Product Details</h1>
+    <p th:text="'Item: ' +${product.name}"></p>
+    <p th:text="'Item code: ' +${product.id}"/>
+    <p th:text="'Price: ' + ${product.price}"/>
+    <p th:text="'Description: ' +${product.description}"/>
+    <a href="/additem">Add another item</a>
+</body>
+</html>
