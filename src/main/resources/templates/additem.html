@@ -7,10 +7,14 @@
 <body>
     <h1>Add a product:</h1>
     <form action="#" th:action="@{/additem}" th:object="${additem}" method="post">
-        <p>Item name: <input type="text" th:field="*{name}"/></p>
-        <p>Item code: <input type="text" th:field="*{id}"/></p>
-        <p>Item price: <input type="number" th:field="*{price}"/> </p>
-        <p>Item description: <input type="text" th:field="*{description}"/></p>
+        <p>Item name: <input type="text" th:field="*{name}"/>
+            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Problem with "name"</span></p>
+        <p>Item code: <input type="number" th:field="*{id}"/>
+            <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Problem with "id"</span></p>
+        <p>Item price: <input type="number" th:field="*{price}"/>
+            <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Problem with "price"</span></p>
+        <p>Item description: <input type="text" th:field="*{description}"/>
+            <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Problem with "description"</span></p>
         <p><input type="submit" value="Submit" /><input type="reset" value="Reset"/></p>
     </form>
 </body>
